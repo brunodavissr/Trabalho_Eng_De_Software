@@ -63,11 +63,9 @@
 
         .int {
             font-size: 20px;
-            font-weight: 500;
+            width:400px;
             margin: 5px;
             padding: 10px;
-            padding-right: 15%;
-            padding-left: 15%;
             border: none;
             border-radius: 25px;
             text-align: center;
@@ -121,29 +119,29 @@
         <h2>Será no dia XX/XX/XX. Não perca!</h2>
         <form id="formulario">
             <fieldset class="fieldset-nome-time">
-                <legend>Informe o nome de seu time</legend>
+                <legend>Nome do time</legend>
 
-                <input type="text" class="int" id="nome_time" name="nome_time" placeholder="Ex: Bolinha Amarela" required autocomplete="off">
+                <input type="text" class="int" id="nome_time" name="nome_time" placeholder="ex: bolinha amarela" required autocomplete="off" maxlength="50">
             </fieldset>
         
             <fieldset class="nome-integrantes">
-                <legend>Nome dos integrantes</legend>
+                <legend>Número de matrícula dos integrantes</legend>
                 
-                <input type="text" class="int" id="primeiro_int" name="primeiro_int" placeholder="Primeiro Integrante" required autocomplete="off"><br>
+                <input type="text" class="int" id="primeiro_int" name="primeiro_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
 
-                <input type="text" class="int" id="segundo_int" name="segundo_int" placeholder="Segundo Integrante" required autocomplete="off"><br>
+                <input type="text" class="int" id="segundo_int" name="segundo_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
 
-                <input type="text" class="int" id="terceiro_int" name="terceiro_int" placeholder="Terceiro Integrante" required autocomplete="off"><br>
+                <input type="text" class="int" id="terceiro_int" name="terceiro_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
             </fieldset>
 
             <fieldset class="email-time">
-                <legend>Informe o e-mail padrão de seu time</legend>
+                <legend>E-mail padrão do time</legend>
 
-                <input type="email" class="int" id="email" name="email_time" placeholder="abcde@dominio.com" required autocomplete="off">
+                <input type="email" class="int" id="email" name="email_time" placeholder="abcde@dominio.com" required autocomplete="off" maxlength="50">
             </fieldset>
                 
             <fieldset class="nivel-time">
-                <legend>Escolha o nível que seu time irá competir</legend>
+                <legend>Nível que o time irá competir</legend>
                 
                 <div class="container-nivel">
                     <label for="radio-iniciante">
