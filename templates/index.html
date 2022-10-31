@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Courier+Prime&family=Montserrat:wght@200&family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Incrição Maratona</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgb(31, 31, 31);
+        }
+
+        main {
+            padding-left: 25%;
+            padding-right: 25%;
+            margin: 0 auto;
+        }
+
+        legend {
+            font-weight: 800;
+            background-color: white;
+            border-radius:5px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .fieldset-nome-time {
+            background-color: orange;
+        }
+
+        .nome-integrantes {
+            background-color: rgb(0, 191, 255);
+        }
+
+        .email-time {
+            background-color: #ff2323;
+        }
+
+        .nivel-time {
+            background-color: orange;
+        }
+
+        .container-nivel {
+            margin-left: 37%;
+            margin-right: 37%;
+            text-align: left;
+        }
+
+        .int {
+            font-size: 20px;
+            width:400px;
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .submeter {
+            background-color: #ff2323;
+            color: white;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+        }
+
+        .submeter:hover {
+            background-color: #ff6060;
+        }
+
+        .submeter:active {
+            background-color: #990000;
+        }
+
+        .resultado {
+            color: rgb(0, 180, 0);
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        footer {
+            font-size: 15px;
+            font-weight: 100;
+            color: white;
+            background-color: black;
+            margin-top: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../static/baloes_coloridos.png" alt="baloes" width="8%">
+        <img src="../static/puc-goias.svg" alt="logo_puc" width="10%">
+    </header>
+
+    <main>
+        <h1>Inscreva-se na Maratona de Programação PUC-GO</h1>
+        <h2>Será no dia XX/XX/XX. Não perca!</h2>
+        <form id="formulario" action="/register" method="post">
+            <fieldset class="fieldset-nome-time">
+                <legend>Nome do time</legend>
+
+                <input type="text" class="int" id="nome_time" name="nome_time" placeholder="ex: bolinha amarela" required autocomplete="off" maxlength="50">
+            </fieldset>
+
+            <fieldset class="nome-integrantes">
+                <legend>Número de matrícula dos integrantes</legend>
+
+                <input type="text" class="int" id="primeiro_int" name="primeiro_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
+
+                <input type="text" class="int" id="segundo_int" name="segundo_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
+
+                <input type="text" class="int" id="terceiro_int" name="terceiro_int" placeholder="sem ponto ou traço" required autocomplete="off" maxlength="14" pattern="[0-9]{14}"><br>
+            </fieldset>
+
+            <fieldset class="email-time">
+                <legend>E-mail padrão do time</legend>
+
+                <input type="email" class="int" id="email" name="email_time" placeholder="abcde@dominio.com" required autocomplete="off" maxlength="50">
+            </fieldset>
+
+            <fieldset class="nivel-time">
+                <legend>Nível que o time irá competir</legend>
+
+                <div class="container-nivel">
+                    <label for="radio-iniciante">
+                        <input type="radio" name="nivel" value="Iniciante" id="radio-iniciante" required>Iniciante
+                    </label><br>
+
+                    <label for="radio-intermediario">
+                        <input type="radio" name="nivel" value="Intermediário" id="radio-intermediario" required>Intermediário
+                    </label><br>
+
+                    <label for="radio-avancado">
+                        <input type="radio" name="nivel" value="Avançado" id="radio-avancado" required>Avançado
+                    </label>
+                </div>
+            </fieldset>
+
+            <button class="submeter">Inscrever Time</button>
+        </form>
+        <div class="resultado">
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Ferramentas de Teste(Grupo 8):</p>
+        <p>Bruno, Eugênio, Raissa</p>
+    </footer>
+
+</body>
+</html>
