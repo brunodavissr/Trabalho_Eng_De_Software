@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright, expect
 import csv
 
 with sync_playwright() as p:
-    navegador = p.chromium.launch(args=['--start-maximized'], headless=False, slow_mo=60)#headless
+    navegador = p.chromium.launch(args=['--start-maximized'], headless=False, slow_mo=20)#headless
 
     #vai abrir o documento csv
     with open("casos.csv", "r", encoding='utf-8') as casos_teste:
@@ -42,19 +42,22 @@ with sync_playwright() as p:
             #localizando o parágrafo da resposta da incrição
             resultado = pagina.locator("#resultado")
             texto_resultado = pagina.locator("#resultado").text_content()
-            print(texto_resultado)
+            print("caso " + str(qntd_casos))
 
             try:#vai tentar ver se o resutado exibido na página bate com o resultado esperado do caso de teste
                 expect(resultado).to_have_text(resultado_esperado)
                 casos_aprovados += 1
                 print("Caso Aprovado")
             except:
-                lista_casos_reprovados.append("Caso " + str(qntd_casos) + " reprovado")
-
+                lista_casos_reprovados.append("Caso " + str(qntd_casos) + " reprovado. Mensagem exibida foi: " + texto_resultado)
 
             pagina.wait_for_timeout(2000)
             pagina.close()
 
     porcentagem_sucesso = casos_aprovados/qntd_casos * 100
-    print("Casos aprovados foram de " + str(porcentagem_sucesso) + "%")
-    print(lista_casos_reprovados)
+    arquivo_txt = open("resultado.txt","w",encoding='utf-8')
+    arquivo_txt.write("Casos aprovados: " + str(round(porcentagem_sucesso, 2)) + "%\n")
+    arquivo_txt.write("Casos reprovados: " + str(round(100.00 - porcentagem_sucesso, 2)) + "%\n\n")
+    for caso in lista_casos_reprovados:
+        arquivo_txt.write(caso + "\n")
+    arquivo_txt.close()
