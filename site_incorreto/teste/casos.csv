@@ -1,0 +1,7 @@
+nome_time,mat1,mat2,mat3,email,nivel,resultado_esperado
+vasco,20221003305050,20221003305051,20221003305052,vasquinho@gmail.com,,
+vasco,20221003305050,20221003305051,20221003305052,vasquinho@gmail.com,Intermediário,Time vasco inscrito com sucesso no nível Intermediário!
+computa,20221003305053,20221003305054,20221003305055,computa@outlook.com,Avançado,Time computa inscrito com sucesso no nível Avançado!
+computa,20221003305056,20221003305057,20221003305058,time_computa@gmail.com,Iniciante,Time computa já cadastrado. Escolha outro nome para seu time
+virou winx,20221003305056,20221003305057,20221003305050,virou_winx@gmail.com,Iniciante,20221003305050 já participa de um time
+virou winx,20221003305056,20221003305057,20221003305057,virou_winx@gmail.com,Iniciante,Matrículas iguais: o time deve possuir três integrantes distintos

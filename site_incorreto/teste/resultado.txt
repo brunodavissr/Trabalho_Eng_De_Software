@@ -1,0 +1,6 @@
+Casos aprovados: 50.0%
+Casos reprovados: 50.0%
+
+Caso 4 reprovado. Mensagem exibida foi: Time computa inscrito com sucesso no nível Iniciante!
+Caso 5 reprovado. Mensagem exibida foi: 20221003305056 já participa de um time
+Caso 6 reprovado. Mensagem exibida foi: 20221003305056 já participa de um time
